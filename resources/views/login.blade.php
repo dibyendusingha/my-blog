@@ -35,14 +35,37 @@
 			<!-- <input type="checkbox" id="chk" aria-hidden="true"> -->
 
 			<div class="signup">
-			    <form method="post" action="{{url('user-login')}}" id="myFormLog">
+			    <form method="post" action="{{url('user-login')}}" id="myFormLog" onsubmit="return validateForm()">
 					@csrf
 					<label for="chk" aria-hidden="true">Login</label>
-					<input type="text" id="email" name="email" placeholder="Email" required="">
-					<input type="password" id="password" name="password" placeholder="Password" required="">
+					<input type="text" id="email" name="email" placeholder="Email" >
+					<input type="password" id="password" name="password" placeholder="Password" >
 					<button type="submit">Login</button>
 				</form>
 				<script>
+
+					function validateForm() {
+
+						var email = $("#email").val();
+						var password = $("#password").val();
+						var passwordInput = document.getElementById("password");
+						var password = passwordInput.value;
+						
+
+
+						if (email== null || email == "") {
+							alert("please enter email id !");
+							return false; // Submit the form
+						}
+
+						if (password== null || password== "") {
+							alert("please enter password !");
+							return false; // Submit the form
+						}
+
+					}
+
+
 					$(document).ready(function() {
 						$('#myFormLog').submit(function(e) {
 							e.preventDefault(); // prevent default form submission

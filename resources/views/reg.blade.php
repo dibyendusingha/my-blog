@@ -38,23 +38,50 @@
 				<form method="post" action="{{url('user-reg')}}" id="myFormReg" onsubmit="return validateForm()">
 					@csrf
 					<label for="chk" aria-hidden="true">Register</label>
-					<input type="text" id="name" name="name" placeholder="User name" required="">
-					<input type="email" id="email" name="email" placeholder="Email" required="">
+					<input type="text" id="name" name="name" placeholder="User name" >
+					<input type="text" id="email" name="email" placeholder="Email" >
 					<input type="password" id="password" name="password" placeholder="Password" >
 					<button type="submit">Register</button>
 				</form>
 				<script>
 					 function validateForm() {
+						var name = $("#name").val();
+						var email = $("#email").val();
+						var password = $("#password").val();
 						var passwordInput = document.getElementById("password");
 						var password = passwordInput.value;
+
+						// var email = document.getElementById("email").value;
+						
+						
+
+						if (name== null || name == "") {
+							alert("please enter User name !");
+							return false; // Submit the form
+						}
+
+						if (email== null || email == "") {
+							alert("please enter email id !");
+							return false; // Submit the form
+						}
+
+						var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+						if (!emailRegex.test(email)) {
+							alert("Invalid email address! Please enter a valid email.");
+						} 
+
+						if (password== null || password== "") {
+							alert("please enter password !");
+							return false; // Submit the form
+						}
+
 						if (password.length < 6) {
 							alert("The password field must be at least 6 characters.");
 							return false; // stop form submission
 						}
-						else if ($("#password").val()== null || $("#password").val()== "") {
-							alert("please enter password !");
-							return false; // Submit the form
-						}
+						
+
+						
 						
 					}
 
