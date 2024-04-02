@@ -18,6 +18,7 @@ use App\Http\Controllers\SystemController;
 Auth::routes();
 
 Route::get('/'               , [SystemController::class,'first_page'])->name('first_page');
+Route::get('/blog/{id}'      , [SystemController::class,'blog_page']);
 
 Route::get('/register-user'  , [LoginController::class,'reg_page'])->name('admin-page');
 Route::get('/login-user'     , [LoginController::class,'login_page']);

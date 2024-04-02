@@ -1,0 +1,11 @@
+/*
+ * Custom CSS
+ */
+
+:root {
+  --bs-body-bg: var(--bs-gray-100);
+}
+.img{
+  height: 60%;
+  width: 100%;
+}

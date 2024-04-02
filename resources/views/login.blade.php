@@ -82,10 +82,10 @@
 
 			</div>
 
-			<div class="login1">
+			<div class="login">
 				<!-- <form method="post" action="{{url('user-login')}}" id="myFormLog"> -->
 					<!-- @csrf -->
-					<label for="chk" aria-hidden="true"><a href="/">Register</a></label>
+					<label for="chk" aria-hidden="true"><a href="/register-user">Register</a></label>
 					<!-- <input type="text" name="email" placeholder="Email" required="">
 					<input type="password" name="password" placeholder="Password" required="">
 					<button type="submit">Login</button> -->
